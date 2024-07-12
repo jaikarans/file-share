@@ -1,0 +1,22 @@
+{
+  "name": "file-share",
+  "version": "1.0.0",
+  "description": "Effortlessly share your files from your personal storage with friends across the internet.",
+  "main": "index.js",
+  "author": "Jaikaran Saini",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "client": "yarn workspace client start",
+    "server": "yarn workspace server dev",
+    "dev": "concurrently \"yarn workspace server dev --host 0.0.0.0\" \"yarn workspace client start --host 0.0.0.0\""
+  },
+  "devDependencies": {
+    "@types/concurrently": "^7.0.0",
+    "concurrently": "^8.2.2"
+  }
+}
